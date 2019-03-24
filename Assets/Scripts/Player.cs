@@ -48,7 +48,7 @@ public class Player : MonoBehaviour {
         shield.SetActive(isActiveShield);
         sfxVolume = DataManager.GetSfxVolume();
         startText.text += " " + levelManager.GetLevelIndex().ToString();
-        fireSpeed = 1f - float.Parse(dataManager.playerData[3])*0.1f;
+        fireSpeed = .2f;// - float.Parse(dataManager.playerData[3])*0.1f;
     }
     private void Update()
     {

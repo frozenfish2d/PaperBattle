@@ -129,7 +129,10 @@ public class Boss : MonoBehaviour {
             transform.position,
             transform.rotation) as GameObject;
         Destroy(explosionParticle, 1f);
-        dataManager.UpdateUnlockLevel(level.GetLevelIndex());  
+        if (Convert.ToInt32(dataManager.playerData[5]) < level.GetLevelIndex())
+        {
+            dataManager.UpdateUnlockLevel(level.GetLevelIndex());
+        }
         dataManager.UpdateStars();
         dataManager.ReLoadAllData();
         level.LoadNextLevel("Level_" + (level.GetLevelIndex()+1).ToString()); 
